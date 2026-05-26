@@ -1,0 +1,58 @@
+name: PracticePlugin
+version: 1.0.0
+api-version: 1.21
+description: Competitive PvP Queue Plugin with ELO Ranking System
+author: PracticePluginDev
+
+main: com.practice.plugin.PracticePlugin
+
+commands:
+  queue:
+    description: Join a competitive queue for a gamemode
+    usage: /queue <gamemode>
+    aliases: [q, qu]
+  gamemode:
+    description: Manage gamemodes
+    usage: /gamemode create <name>
+  setrounds:
+    description: Set the number of rounds for a gamemode
+    usage: /setrounds <gamemode> <rounds>
+  setregion:
+    description: Set the region for a gamemode map using WorldEdit selection
+    usage: /setregion <gamemode> <map_number>
+  setfirstspawn:
+    description: Set the first player spawn location
+    usage: /setfirstspawn <gamemode>
+  setsecondspawn:
+    description: Set the second player spawn location
+    usage: /setsecondspawn <gamemode>
+  invset:
+    description: Save your current inventory as your spawn kit for a gamemode
+    usage: /invset <gamemode>
+  eloview:
+    description: View ELO statistics
+    usage: /eloview [player]
+  duel:
+    description: Challenge a player to a duel
+    usage: /duel <player> <gamemode> <rounds>
+    aliases: [d]
+
+permissions:
+  practiceplugin.queue:
+    description: Allows player to join queues
+    default: true
+  practiceplugin.gamemode.create:
+    description: Allows player to create gamemodes
+    default: op
+  practiceplugin.map.set:
+    description: Allows player to set map regions
+    default: op
+  practiceplugin.invset:
+    description: Allows player to set their inventory kit
+    default: true
+  practiceplugin.eloview:
+    description: Allows player to view ELO stats
+    default: true
+  practiceplugin.duel:
+    description: Allows player to create duels
+    default: true

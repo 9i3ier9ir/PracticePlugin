@@ -1,0 +1,23 @@
+# Build directories
+target/
+*.class
+*.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+plugins/
+data/
+src/main/resources/elo.yml
+src/main/resources/gamemodes.yml
+src/main/resources/kits.yml
+src/main/resources/maps.yml

@@ -1,0 +1,59 @@
+# PracticePlugin Configuration
+
+# ELO Settings
+elo:
+  starting-elo: 100
+  # Matchmaking wait time before expanding search (seconds)
+  matchmaking-wait-time: 60
+  # ELO gain/loss multipliers
+  gain-multiplier: 20
+  loss-multiplier: 20
+
+# Match Settings
+match:
+  blindness-duration: 3 # seconds
+  blindness-amplifier: 2 # Blindness level (1-4)
+
+# Rank Configuration (ELO ranges)
+ranks:
+  wood:
+    max-tier: 3
+    min-elo: 100
+    max-elo: 300
+  stone:
+    max-tier: 3
+    min-elo: 300
+    max-elo: 600
+  coal:
+    max-tier: 2
+    min-elo: 600
+    max-elo: 900
+  copper:
+    max-tier: 3
+    min-elo: 900
+    max-elo: 1300
+  redstone:
+    max-tier: 3
+    min-elo: 1300
+    max-elo: 1700
+  gold:
+    max-tier: 3
+    min-elo: 1700
+    max-elo: 2100
+  emerald:
+    max-tier: 2
+    min-elo: 2100
+    max-elo: 2400
+  diamond:
+    max-tier: 3
+    min-elo: 2400
+    max-elo: 2800
+  netherite:
+    max-tier: 1
+    min-elo: 2800
+    max-players: 10
+
+# Queue Settings
+queue:
+  # ELO range for matchmaking (can match players within this range)
+  elo-range: 200
