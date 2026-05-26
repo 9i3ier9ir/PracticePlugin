@@ -149,7 +149,7 @@ public class MapCommand implements CommandExecutor {
 
     private boolean handleSetFirstSpawn(Player player, String[] args) {
         if (args.length < 1) {
-            player.sendMessage("§cUsage: /setfirstspawn <gamemode>");
+            player.sendMessage("§cUsage: /setfirstspawn <gamemode> [map_number]");
             return true;
         }
 
@@ -160,7 +160,22 @@ public class MapCommand implements CommandExecutor {
             return true;
         }
 
-        int mapNumber = gamemodeManager.getGamemode(gamemodeName).getNextMapNumber();
+        int mapNumber;
+        if (args.length >= 2) {
+            try {
+                mapNumber = Integer.parseInt(args[1]);
+                if (mapNumber <= 0) {
+                    player.sendMessage("§cMap number must be a positive integer!");
+                    return true;
+                }
+            } catch (NumberFormatException e) {
+                player.sendMessage("§cMap number must be a number!");
+                return true;
+            }
+        } else {
+            mapNumber = gamemodeManager.getGamemode(gamemodeName).getNextMapNumber();
+        }
+
         mapManager.saveFirstSpawn(gamemodeName, mapNumber, player.getLocation());
         player.sendMessage("§a✓ First spawn set for " + gamemodeName + " map " + mapNumber);
         player.sendMessage("§eLocation: (" + player.getLocation().getBlockX() + ", " + player.getLocation().getBlockY() + ", " + player.getLocation().getBlockZ() + ")");
@@ -170,7 +185,7 @@ public class MapCommand implements CommandExecutor {
 
     private boolean handleSetSecondSpawn(Player player, String[] args) {
         if (args.length < 1) {
-            player.sendMessage("§cUsage: /setsecondspawn <gamemode>");
+            player.sendMessage("§cUsage: /setsecondspawn <gamemode> [map_number]");
             return true;
         }
 
@@ -181,7 +196,22 @@ public class MapCommand implements CommandExecutor {
             return true;
         }
 
-        int mapNumber = gamemodeManager.getGamemode(gamemodeName).getNextMapNumber();
+        int mapNumber;
+        if (args.length >= 2) {
+            try {
+                mapNumber = Integer.parseInt(args[1]);
+                if (mapNumber <= 0) {
+                    player.sendMessage("§cMap number must be a positive integer!");
+                    return true;
+                }
+            } catch (NumberFormatException e) {
+                player.sendMessage("§cMap number must be a number!");
+                return true;
+            }
+        } else {
+            mapNumber = gamemodeManager.getGamemode(gamemodeName).getNextMapNumber();
+        }
+
         mapManager.saveSecondSpawn(gamemodeName, mapNumber, player.getLocation());
         player.sendMessage("§a✓ Second spawn set for " + gamemodeName + " map " + mapNumber);
         player.sendMessage("§eLocation: (" + player.getLocation().getBlockX() + ", " + player.getLocation().getBlockY() + ", " + player.getLocation().getBlockZ() + ")");

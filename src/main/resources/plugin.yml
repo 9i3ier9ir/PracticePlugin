@@ -22,10 +22,10 @@ commands:
     usage: /setregion <gamemode> <map_number>
   setfirstspawn:
     description: Set the first player spawn location
-    usage: /setfirstspawn <gamemode>
+    usage: /setfirstspawn <gamemode> [map_number]
   setsecondspawn:
     description: Set the second player spawn location
-    usage: /setsecondspawn <gamemode>
+    usage: /setsecondspawn <gamemode> [map_number]
   invset:
     description: Save your current inventory as your spawn kit for a gamemode
     usage: /invset <gamemode>
